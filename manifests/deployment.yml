@@ -6,7 +6,8 @@ metadata:
 spec:
   replicas: 1
   selector:
-    app: aws-example-octodex
+    matchLabels:
+      app: aws-example-octodex
   strategy:
     rollingUpdate:
       maxSurge: 1
