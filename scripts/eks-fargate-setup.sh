@@ -1,7 +1,7 @@
 #!/bin/bash
 
-CLUSTER_NAME=<your desired EKS cluster name>
-AWS_REGION=<your region that supports EKS/Fargate, e.g. eu-west-1>
+CLUSTER_NAME=testingeks
+AWS_REGION=ap-southeast-1
 
 #check for needed commands
 command -v eksctl >/dev/null 2>&1 || { echo >&2 "I require eksctl but it's not installed.  Aborting."; exit 1; }
@@ -30,7 +30,7 @@ aws iam create-role --role-name AmazonEKSFargatePodExecutionRole --assume-role-p
 aws iam attach-role-policy --role-name AmazonEKSFargatePodExecutionRole --policy-arn arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy
 
 #create the EKS Fargate cluster
-eksctl create cluster --name $CLUSTER_NAME --version 1.14 --fargate
+eksctl create cluster --name $CLUSTER_NAME --fargate
 
 #https://aws.amazon.com/blogs/opensource/kubernetes-ingress-aws-alb-ingress-controller/
 #https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html
