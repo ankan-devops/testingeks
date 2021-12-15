@@ -14,5 +14,7 @@ spec:
         paths:
           - path: /*
             backend:
-              serviceName: "aws-example-octodex"
-              servicePort: 80
+              service:
+                name: "aws-example-octodex"
+                port:
+                  number: 80
