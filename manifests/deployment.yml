@@ -23,7 +23,7 @@ spec:
         # image: 00000000000000.dkr.ecr.my-region.amazonaws.com/example-eks:tag
         # image: REGISTRY/REPO:TAG
         # The full image will be dynamically added by Kustomize in the workflow.
-        image: testingeks
+        image: 264322735540.dkr.ecr.ap-southeast-1.amazonaws.com/testingeks:a32834ef0b1dfc68a63fbf20f1dad5ca9237101d
         ports:
         - containerPort: 5000
         resources:
